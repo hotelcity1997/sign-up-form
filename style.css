@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Raleway:ital,wght@1,900&display=swap');
 
 * {
   margin: 0;
@@ -14,7 +14,6 @@ html {
 
 body {
   display: flex;
-  flex-direction: row;
   font-family: 'PT Sans Narrow', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #303030;
 }
@@ -39,10 +38,20 @@ input {
   background-color: #fffbfb;
 }
 
+input[type=password] {
+  margin-bottom: 0;
+}
+
 input:focus {
   -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.3); 
   box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.3);
   outline: none;
+  border: 1px solid #FBCA25;
+}
+
+#password-container::after {
+  content: attr(data-content) "";
+  color: #e02121;
 }
 
 h1 {
@@ -61,14 +70,23 @@ fieldset div {
 }
 
 input[type=submit] {
-  background-color: #f6b448;
+  background-color: #FBCA25;
   width: 14rem;
   height: 3rem;
   color: white;
-  margin-left: 4rem;
-  margin-top: 3rem;
-  font-size: 18px;
+  margin-top: 2rem;
+  font-size: 20px;
   font-weight: 600;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.1);
+}
+
+.footer a {
+  color: #FBCA25;
+  text-decoration: none;
+  font-weight: 900;
 }
 
 
@@ -98,7 +116,7 @@ input[type=submit] {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 20%;
+  top: 12rem;
   left: -10rem;
   width: 60vw;
   height: 15rem;
@@ -127,6 +145,7 @@ img[src^="jslogo"] {
 .footer {
   background-color: #f3f3f3;
   height: 100%;
+  padding-left: 4rem;
 }
 
 .cta h1 {
@@ -134,8 +153,16 @@ img[src^="jslogo"] {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 4vh;
+  max-width: 58rem;
 }
 
+.photo-container h1 {
+  color: white;
+  font-family: raleway, Arial, Helvetica, sans-serif;
+  font-weight: 800px;
+  font-size: 80px;
+  padding-left: 2.2rem;
+}
 
 .form-input-container {
   background-color: #FFFFFF;
@@ -144,11 +171,41 @@ img[src^="jslogo"] {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 4vh;
+  box-shadow: 3px 3px 7px -1px rgba(0,0,0,0.1);
+  z-index: 1;
 }
 
 .form-input-container h1 {
   padding-bottom: 3vh;
 }
+
+.footer > div {
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1150px) {
+  .logo-bg {
+    flex-direction: column;
+    align-items: flex-start;
+    top: 20%;
+    left: -10rem;
+    width: 60vw;
+    height: 15rem;
+    }
+
+  .photo-container h1 {
+    font-size: 50px;
+    padding-left: 14rem;
+  }  
+  
+  img[src^="jslogo"] {
+    height: 70%; 
+    padding-top: 1.5rem;
+    padding-left: 13.5rem;
+  }
+}
+
 
 @media only screen and (max-width: 800px) {
   .form-container {
@@ -159,6 +216,12 @@ img[src^="jslogo"] {
 
   .photo-container {
     height: 225px;
+    display: flex;
+  }
+
+  .photo-container h1 {
+    font-size: 50px;
+    padding-left: 12.8rem;
   }
 
   body {
@@ -168,7 +231,7 @@ img[src^="jslogo"] {
   }
 
   html {
-    background-position: -18rem -90rem;
+    background-position: -28rem -90rem;
     background-size: auto;
   }
   .cta h1 {
@@ -185,8 +248,19 @@ img[src^="jslogo"] {
 
   .logo-bg {
     top: -15px;
-    height: 120%;
-    width: 90%;
+    height: 20rem;
+    width: 22rem;
   }
 
+  img[src^="jslogo"] {
+    height: 11.25rem; 
+    padding-top: 2.2rem;
+    padding-left: 12.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .cta h1 { 
+    font-size: 28px;
+  }
 }
